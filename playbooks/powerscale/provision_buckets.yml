@@ -1,0 +1,13 @@
+- name: Provisionar buckets PowerScale
+  hosts: localhost
+  connection: local
+
+  vars_files:
+    - ../../catalog/buckets.yml
+    - ../../group_vars/vault.yml
+
+  tasks:
+
+    - name: Mostrar buckets
+      debug:
+        var: buckets

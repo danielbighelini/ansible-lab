@@ -1,0 +1,17 @@
+- name: Extrair campo JSON
+  hosts: localhost
+  connection: local
+
+  tasks:
+
+    - name: Chamar API
+      uri:
+        url: https://api.github.com
+        method: GET
+        return_content: yes
+
+      register: api
+
+    - name: Mostrar URL atual user
+      debug:
+        msg: "{{ api.json.current_user_url }}"

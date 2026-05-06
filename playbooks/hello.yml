@@ -1,0 +1,9 @@
+- name: Primeiro teste Ansible
+  hosts: localhost
+  connection: local
+
+  tasks:
+
+    - name: Mostrar mensagem
+      debug:
+        msg: "Ansible funcionando corretamente"

@@ -1,0 +1,14 @@
+- name: Diretório dinâmico
+  hosts: localhost
+  connection: local
+
+  vars:
+    sistema: SAP01
+    ambiente: prod
+
+  tasks:
+
+    - name: Criar diretório dinâmico
+      file:
+        path: "~/{{ sistema }}-{{ ambiente }}"
+        state: directory

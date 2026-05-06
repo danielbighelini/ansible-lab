@@ -1,0 +1,17 @@
+- name: Teste de variáveis
+  hosts: localhost
+  connection: local
+
+  vars:
+    sistema: SAP01
+    ambiente: prod
+    retention: 7y
+
+  tasks:
+
+    - name: Mostrar informações
+      debug:
+        msg:
+          - "Sistema: {{ sistema }}"
+          - "Ambiente: {{ ambiente }}"
+          - "Retenção: {{ retention }}"

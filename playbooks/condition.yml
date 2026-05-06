@@ -1,0 +1,14 @@
+- name: Teste condição
+  hosts: localhost
+  connection: local
+
+  vars:
+    ambiente: prod
+
+  tasks:
+
+    - name: Executar apenas em produção
+      debug:
+        msg: "Deploy em produção"
+
+      when: ambiente == "prod"

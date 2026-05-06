@@ -1,0 +1,11 @@
+buckets:
+
+  - name: sap-batch-prod
+    owner: team-finance
+    retention: 7y
+    environment: prod
+
+  - name: edi-online-prod
+    owner: integration-team
+    retention: 1y
+    environment: prod

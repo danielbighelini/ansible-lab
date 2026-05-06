@@ -1,0 +1,17 @@
+- name: Teste REST API
+  hosts: localhost
+  connection: local
+
+  tasks:
+
+    - name: Consultar API pública
+      uri:
+        url: https://api.github.com
+        method: GET
+        return_content: yes
+
+      register: resultado
+
+    - name: Mostrar retorno
+      debug:
+        var: resultado.json

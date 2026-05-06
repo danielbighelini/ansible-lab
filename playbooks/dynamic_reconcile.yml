@@ -1,0 +1,54 @@
+- name: Reconciliação dinâmica
+  hosts: localhost
+  connection: local
+
+  vars_files:
+    - buckets.yml
+
+  tasks:
+
+    - name: Consultar API
+      uri:
+        url: https://jsonplaceholder.typicode.com/users
+        method: GET
+        return_content: yes
+
+      register: api_result
+
+    - name: Extrair nomes existentes
+      set_fact:
+        existing_buckets: >-
+          {{
+            api_result.json
+            | map(attribute='username')
+            | list
+          }}
+
+    - name: Mostrar existentes
+      debug:
+        var: existing_buckets
+
+    - name: Criar buckets ausentes
+      uri:
+        url: https://jsonplaceholder.typicode.com/posts
+        method: POST
+
+        body_format: json
+
+        body:
+          bucket_name: "{{ item.name }}"
+          owner: "{{ item.owner }}"
+          retention: "{{ item.retention }}"
+
+        status_code:
+          - 201
+
+      when: item.name not in existing_buckets
+
+      loop: "{{ buckets }}"
+
+      register: resultado
+
+    - name: Mostrar criação
+      debug:
+        var: resultado.results

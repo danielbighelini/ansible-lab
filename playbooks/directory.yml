@@ -1,0 +1,10 @@
+- name: Criar diretório teste
+  hosts: localhost
+  connection: local
+
+  tasks:
+
+    - name: Criar pasta
+      file:
+        path: ~/ansible-test
+        state: directory

@@ -1,0 +1,38 @@
+- name: Reconciliação de buckets
+  hosts: localhost
+  connection: local
+
+  vars_files:
+    - buckets.yml
+    - existing_buckets.yml
+
+  tasks:
+
+    - name: Mostrar buckets existentes
+      debug:
+        var: existing_buckets
+
+    - name: Criar buckets ausentes
+      uri:
+        url: https://jsonplaceholder.typicode.com/posts
+        method: POST
+
+        body_format: json
+
+        body:
+          bucket_name: "{{ item.name }}"
+          owner: "{{ item.owner }}"
+          retention: "{{ item.retention }}"
+
+        status_code:
+          - 201
+
+      when: item.name not in existing_buckets
+
+      loop: "{{ buckets }}"
+
+      register: criacao
+
+    - name: Mostrar resultado
+      debug:
+        var: criacao.results

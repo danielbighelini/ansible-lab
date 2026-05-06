@@ -1,0 +1,18 @@
+- name: Criar múltiplos diretórios
+  hosts: localhost
+  connection: local
+
+  vars:
+    sistemas:
+      - SAP01
+      - EDI01
+      - WMS01
+
+  tasks:
+
+    - name: Criar diretórios
+      file:
+        path: "~/{{ item }}"
+        state: directory
+
+      loop: "{{ sistemas }}"

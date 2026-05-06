@@ -1,0 +1,33 @@
+- name: Provisionar buckets fake
+  hosts: localhost
+  connection: local
+
+  vars_files:
+    - buckets.yml
+
+  tasks:
+
+    - name: Simular criação bucket via API
+      uri:
+        url: https://jsonplaceholder.typicode.com/posts
+        method: POST
+
+        body_format: json
+
+        body:
+          bucket_name: "{{ item.name }}"
+          owner: "{{ item.owner }}"
+          retention: "{{ item.retention }}"
+
+        return_content: yes
+
+        status_code:
+          - 201
+
+      register: resultado
+
+      loop: "{{ buckets }}"
+
+    - name: Mostrar retorno
+      debug:
+        var: resultado.results

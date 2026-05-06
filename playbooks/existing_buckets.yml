@@ -1,0 +1,5 @@
+existing_buckets:
+
+  - sap-batch-prod
+
+  - legacy-prod
