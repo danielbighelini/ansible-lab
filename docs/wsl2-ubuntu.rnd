@@ -1,0 +1,45 @@
+WSL2 + Ubuntu
+
+wsl --status
+wsl --install
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+wsl --list --verbose
+wsl.exe --list --online
+wsl --install -d Ubuntu
+winget install Microsoft.VisualStudioCode
+instale as extensões WSL, YAML, Ansible e Error Lens no VSCode
+code --install-extension ms-vscode-remote.remote-wsl
+code --install-extension redhat.vscode-yaml
+code --install-extension redhat.ansible
+wsl --shutdown
+
+
+dentro do ubuntu
+uname -a
+lsb_release -a
+sudo apt update
+sudo apt update && sudo apt upgrade -y
+sudo apt install ansible -y
+cd ~
+mkdir ansible-lab
+cd ansible-lab
+exit
+chamar ubuntu novamente
+code .
+ansible-playbook directory.yml
+nano ~/.bashrc
+ansible-vault create vault.yml
+ansible-vault edit vault.yml
+ansible-vault view vault.yml
+ansible-vault rekey vault.yml
+ansible-vault encrypt arquivo.yml
+ansible-vault decrypt vault.yml
+
+
+
+
+Ver diretório atual: pwd
+listar arquivos: ls -la
+Entrar em pasta: cd nome_da_pasta
+Voltar: cd ..
+Ir para home: cd ~
