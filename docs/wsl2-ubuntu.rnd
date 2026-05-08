@@ -34,7 +34,8 @@ ansible-vault view vault.yml
 ansible-vault rekey vault.yml
 ansible-vault encrypt arquivo.yml
 ansible-vault decrypt vault.yml
-
+git config --global user.name "Daniel Bighelini"
+git config --global user.email "danielbighelini@gmail.com"
 
 
 
