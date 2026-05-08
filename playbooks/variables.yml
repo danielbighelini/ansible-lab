@@ -10,7 +10,7 @@
   tasks:
 
     - name: Mostrar informações
-      debug:
+      ansible.builtin.debug:
         msg:
           - "Sistema: {{ sistema }}"
           - "Ambiente: {{ ambiente }}"

@@ -1,0 +1,19 @@
+{
+  "name": "ansible-lab",
+
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+
+  "remoteUser": "vscode",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "redhat.ansible",
+        "ms-python.python",
+        "ms-vscode.makefile-tools"
+      ]
+    }
+  }
+}

@@ -1,0 +1,8 @@
+---
+ansible_environment_name: hml
+
+api_base_url: "https://hml-api.example.com"
+
+common_tags:
+  owner: automation
+  managed_by: ansible

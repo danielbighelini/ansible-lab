@@ -8,7 +8,7 @@
   tasks:
 
     - name: Executar apenas em produção
-      debug:
+      ansible.builtin.debug:
         msg: "Deploy em produção"
 
       when: ambiente == "prod"

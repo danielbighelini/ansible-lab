@@ -5,6 +5,7 @@
   tasks:
 
     - name: Criar pasta
-      file:
+      ansible.builtin.file:
         path: ~/ansible-test
         state: directory
+        mode: "0755"

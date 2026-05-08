@@ -4,10 +4,9 @@
 
   vars_files:
     - ../../catalog/buckets.yml
-    - ../../group_vars/vault.yml
 
   tasks:
 
     - name: Mostrar buckets
-      debug:
+      ansible.builtin.debug:
         var: buckets

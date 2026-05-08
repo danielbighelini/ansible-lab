@@ -3,20 +3,20 @@
   connection: local
 
   vars_files:
-    - buckets.yml
+    - vars/buckets.yml
 
   tasks:
 
     - name: Consultar API
-      uri:
+      ansible.builtin.uri:
         url: https://jsonplaceholder.typicode.com/users
         method: GET
-        return_content: yes
+        return_content: true
 
       register: api_result
 
     - name: Extrair nomes existentes
-      set_fact:
+      ansible.builtin.set_fact:
         existing_buckets: >-
           {{
             api_result.json
@@ -25,11 +25,11 @@
           }}
 
     - name: Mostrar existentes
-      debug:
+      ansible.builtin.debug:
         var: existing_buckets
 
     - name: Criar buckets ausentes
-      uri:
+      ansible.builtin.uri:
         url: https://jsonplaceholder.typicode.com/posts
         method: POST
 
@@ -50,5 +50,5 @@
       register: resultado
 
     - name: Mostrar criação
-      debug:
+      ansible.builtin.debug:
         var: resultado.results

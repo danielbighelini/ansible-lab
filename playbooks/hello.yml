@@ -5,5 +5,5 @@
   tasks:
 
     - name: Mostrar mensagem
-      debug:
+      ansible.builtin.debug:
         msg: "Ansible funcionando corretamente"

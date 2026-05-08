@@ -9,6 +9,7 @@
   tasks:
 
     - name: Criar diretório dinâmico
-      file:
+      ansible.builtin.file:
         path: "~/{{ sistema }}-{{ ambiente }}"
         state: directory
+        mode: "0755"

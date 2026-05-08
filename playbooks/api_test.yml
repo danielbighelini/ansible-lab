@@ -5,13 +5,13 @@
   tasks:
 
     - name: Consultar API pública
-      uri:
+      ansible.builtin.uri:
         url: https://api.github.com
         method: GET
-        return_content: yes
+        return_content: true
 
       register: resultado
 
     - name: Mostrar retorno
-      debug:
+      ansible.builtin.debug:
         var: resultado.json

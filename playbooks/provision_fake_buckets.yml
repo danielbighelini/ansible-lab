@@ -3,12 +3,12 @@
   connection: local
 
   vars_files:
-    - buckets.yml
+    - vars/buckets.yml
 
   tasks:
 
     - name: Simular criação bucket via API
-      uri:
+      ansible.builtin.uri:
         url: https://jsonplaceholder.typicode.com/posts
         method: POST
 
@@ -19,7 +19,7 @@
           owner: "{{ item.owner }}"
           retention: "{{ item.retention }}"
 
-        return_content: yes
+        return_content: true
 
         status_code:
           - 201
@@ -29,5 +29,5 @@
       loop: "{{ buckets }}"
 
     - name: Mostrar retorno
-      debug:
+      ansible.builtin.debug:
         var: resultado.results

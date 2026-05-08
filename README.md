@@ -67,8 +67,8 @@ ansible-playbook playbooks/hello.yml
 ### `playbooks/reconcile.yml`
 Reconciliação de buckets usando arquivos de variáveis locais:
 
-- `playbooks/buckets.yml`
-- `playbooks/existing_buckets.yml`
+- `vars/buckets.yml`
+- `vars/existing_buckets.yml`
 
 ```bash
 ansible-playbook playbooks/reconcile.yml
@@ -78,10 +78,9 @@ ansible-playbook playbooks/reconcile.yml
 Playbook para provisionar buckets PowerScale usando:
 
 - `catalog/buckets.yml`
-- `group_vars/vault.yml`
 
 ```bash
-ansible-playbook playbooks/powerscale/provision_buckets.yml --ask-vault-pass
+ansible-playbook playbooks/powerscale/provision_buckets.yml
 ```
 
 ### `playbooks/api_test.yml`
@@ -93,8 +92,8 @@ ansible-playbook playbooks/api_test.yml
 
 ## Observações importantes
 
-- `playbooks/buckets.yml` e `playbooks/existing_buckets.yml` são atualmente arquivos de dados/variáveis, não playbooks.
-  - Recomenda-se mover esses arquivos para um diretório como `vars/`, `data/` ou `catalog/` para deixar a finalidade mais clara.
+- `vars/buckets.yml` e `vars/existing_buckets.yml` são arquivos de dados/variáveis, não playbooks.
+  - Eles foram movidos para `vars/` para deixar a finalidade mais clara.
 - `roles/` existe, mas ainda não contém roles utilitárias reais.
   - Para uma estrutura mais madura, crie roles em `roles/<nome_da_role>/` e use `roles:` nos playbooks.
 - `collections/` também está definido, mas sem conteúdo específico documentado.

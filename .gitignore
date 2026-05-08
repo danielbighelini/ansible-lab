@@ -1,5 +1,41 @@
+# Ansible
 *.retry
+.ansible/cache/
+.ansible/facts/
+
+# Python
 __pycache__/
-logs/
-.env
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.pytest_cache/
+.cache/
+
+# IDE & Editor
 .vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Environment & Secrets
+.env
+.env.local
+.env.*.local
+.vault-pass
+.vault-password
+group_vars/vault.yml
+
+# Logs & Temp
+logs/
+*.log
+
+# Collections (reinstall via requirements.yml)
+collections/ansible_collections/
+
+# Virtual Environments (if applicable)
+venv/
+env/
+.venv/
+ENV/

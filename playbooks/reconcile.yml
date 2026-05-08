@@ -3,17 +3,17 @@
   connection: local
 
   vars_files:
-    - buckets.yml
-    - existing_buckets.yml
+    - vars/buckets.yml
+    - vars/existing_buckets.yml
 
   tasks:
 
     - name: Mostrar buckets existentes
-      debug:
+      ansible.builtin.debug:
         var: existing_buckets
 
     - name: Criar buckets ausentes
-      uri:
+      ansible.builtin.uri:
         url: https://jsonplaceholder.typicode.com/posts
         method: POST
 
@@ -34,5 +34,5 @@
       register: criacao
 
     - name: Mostrar resultado
-      debug:
+      ansible.builtin.debug:
         var: criacao.results

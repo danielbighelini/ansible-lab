@@ -1,0 +1,8 @@
+---
+ansible_environment_name: prod
+
+api_base_url: "https://prod-api.example.com"
+
+common_tags:
+  owner: automation
+  managed_by: ansible
