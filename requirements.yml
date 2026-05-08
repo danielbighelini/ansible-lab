@@ -1,0 +1,7 @@
+collections:
+  - name: community.general
+  - name: ansible.posix
+
+# Adicione roles aqui se precisar instalar roles externas:
+# roles:
+#   - name: <role_name>

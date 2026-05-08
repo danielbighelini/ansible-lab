@@ -1,0 +1,5 @@
+---
+# Tasks principais da role powerscale_bucket
+- name: Placeholder para criação de bucket PowerScale
+  debug:
+    msg: "Implementar criação de bucket PowerScale aqui"

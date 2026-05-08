@@ -1,0 +1,5 @@
+---
+# Defaults para role powerscale_bucket
+powerscale_bucket_state: present
+powerscale_bucket_owner: "default-owner"
+powerscale_bucket_retention: "1y"

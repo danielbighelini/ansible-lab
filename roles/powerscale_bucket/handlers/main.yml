@@ -1,0 +1,5 @@
+---
+# Handlers da role powerscale_bucket
+- name: notify bucket change
+  debug:
+    msg: "Bucket configuration was changed"
