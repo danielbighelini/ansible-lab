@@ -7,6 +7,14 @@
 
   "remoteUser": "vscode",
 
+  "mounts": [
+    "source=/home/daniel-bighelini/.ssh/ssh-agent.sock,target=/ssh-agent,type=bind"
+  ],
+
+  "remoteEnv": {
+    "SSH_AUTH_SOCK": "/ssh-agent"
+  },
+
   "customizations": {
     "vscode": {
       "extensions": [
