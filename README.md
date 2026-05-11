@@ -7,7 +7,7 @@ Este repositório é um laboratório de Ansible com exemplos de playbooks, inven
 - Ansible instalado (versão 2.10 ou superior recomendada)
 - Python 3 disponível em `/usr/bin/python3`
 - Acesso de rede para executar playbooks que fazem chamadas HTTP
-- Para desenvolvimento: WSL2 com Ubuntu (conforme documentado em `docs/wsl2-ubuntu.rnd`)
+- Para desenvolvimento: WSL2 com Ubuntu/Debian
 
 ## Instalação e Configuração
 
@@ -23,7 +23,7 @@ Este repositório é um laboratório de Ansible com exemplos de playbooks, inven
    ```
    Ou manualmente:
    ```bash
-   ansible-galaxy collection install -r requirements.yml
+   ansible-galaxy collection install -r collections/requirements.yml
    ```
 
 3. Verifique a configuração:
@@ -185,13 +185,13 @@ Este projeto é distribuído sob a licença MIT.
 As dependências de collections podem ser instaladas com:
 
 ```bash
-ansible-galaxy collection install -r requirements.yml
+ansible-galaxy collection install -r collections/requirements.yml
 ```
 
-Se você adicionar roles externas, use também:
+Se você adicionar roles externas, crie um arquivo `roles/requirements.yml` e use também:
 
 ```bash
-ansible-galaxy install -r requirements.yml
+ansible-galaxy install -r roles/requirements.yml
 ```
 
 ## Boas práticas recomendadas
@@ -201,7 +201,7 @@ ansible-galaxy install -r requirements.yml
 - Separe inventários por ambiente se precisar de `prod`, `hml`, `dev`.
   - Exemplo: `inventory/prod/hosts.yml`, `inventory/dev/hosts.yml`.
 - Adicione `host_vars/` quando tiver variáveis que dependam de host específico.
-- Use `requirements.yml` para coleções e dependências de roles.
+- Use `collections/requirements.yml` para coleções e `roles/requirements.yml` para dependências de roles.
 
 ## Próximos passos sugeridos
 
@@ -209,4 +209,3 @@ ansible-galaxy install -r requirements.yml
 2. Criar roles reutilizáveis em `roles/`.
 3. Organizar arquivos de dados em um diretório dedicado.
 4. Documentar a execução de `ansible-vault` e o processo de criação de secrets.
-5. Incluir um `Makefile` ou scripts de execução para facilitar a vida do usuário.

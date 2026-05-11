@@ -7,16 +7,16 @@ install:
 
 lint:
 	ansible-lint \
-		playbooks \
+		playbooks/powerscale \
 		roles
 
 yaml:
 	yamllint \
-		playbooks \
+		playbooks/powerscale \
 		roles
 
 syntax:
-	@for playbook in playbooks/*.yml; do \
+	@for playbook in playbooks/powerscale/*.yml; do \
 		ansible-playbook $$playbook --syntax-check; \
 	done
 

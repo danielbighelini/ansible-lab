@@ -1,0 +1,16 @@
+---
+# Configuração padrão do ansible-lint para este repositório.
+# Exclui diretórios de dependências e artefatos locais que não devem ser analisados.
+skip_list: []
+exclude_paths:
+  - .git
+  - .ansible
+  - .devcontainer
+  - collections
+  - docs
+  - logs
+  - node_modules
+  - tests
+  - vendor
+  - __pycache__
+verbosity: 1
