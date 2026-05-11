@@ -1,3 +1,4 @@
+---
 - name: Teste de variáveis
   hosts: localhost
   connection: local

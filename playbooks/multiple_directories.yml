@@ -1,3 +1,4 @@
+---
 - name: Criar múltiplos diretórios
   hosts: localhost
   connection: local

@@ -1,3 +1,4 @@
+---
 - name: Criar diretório teste
   hosts: localhost
   connection: local

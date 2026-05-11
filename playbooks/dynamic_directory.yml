@@ -1,3 +1,4 @@
+---
 - name: Diretório dinâmico
   hosts: localhost
   connection: local

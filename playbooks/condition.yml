@@ -1,3 +1,4 @@
+---
 - name: Teste condição
   hosts: localhost
   connection: local

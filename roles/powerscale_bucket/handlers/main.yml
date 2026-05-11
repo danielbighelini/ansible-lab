@@ -1,5 +1,5 @@
 ---
 # Handlers da role powerscale_bucket
-- name: notify bucket change
-  debug:
+- name: Notify bucket change
+  ansible.builtin.debug:
     msg: "Bucket configuration was changed"

@@ -1,3 +1,4 @@
+---
 - name: Provisionar buckets PowerScale
   hosts: localhost
   connection: local

@@ -1,3 +1,4 @@
+---
 - name: Reconciliação dinâmica
   hosts: localhost
   connection: local

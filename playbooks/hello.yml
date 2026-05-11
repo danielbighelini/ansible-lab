@@ -1,3 +1,4 @@
+---
 - name: Primeiro teste Ansible
   hosts: localhost
   connection: local

@@ -1,3 +1,4 @@
+---
 - name: Reconciliação de buckets
   hosts: localhost
   connection: local

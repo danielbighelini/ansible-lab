@@ -1,3 +1,4 @@
+---
 - name: Provisionar buckets fake
   hosts: localhost
   connection: local
