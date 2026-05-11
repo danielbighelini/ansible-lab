@@ -2,6 +2,7 @@
 *.retry
 .ansible/cache/
 .ansible/facts/
+.ansible
 
 # Python
 __pycache__/
